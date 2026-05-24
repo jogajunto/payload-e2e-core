@@ -8,7 +8,6 @@ init-repo.sh
 
 # Tests & docs (src already excluded)
 CHANGELOG.md
-README.md
 
 # OS artifacts
 .DS_Store

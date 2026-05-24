@@ -153,35 +153,24 @@ export default defineConfig({
 
 ### `BaseCollectionPage`
 
-| Método                     | Descrição                                          |
-|----------------------------|----------------------------------------------------|
-| `gotoList()`               | Navega para a listagem da collection.              |
-| `gotoCreate()`             | Navega para a página de criação.                   |
-| `save()`                   | Salva e aguarda toast de sucesso.                  |
-| `delete()`                 | Executa fluxo completo de exclusão.                |
-| `verifyInList(title)`      | Verifica se o texto está visível na listagem.      |
-| `verifyNotInList(title)`   | Verifica se o texto NÃO está na listagem.          |
-| `switchTab(tabName)`       | Alterna para uma aba (ex.: "SEO", "Conteúdo").     |
+| Método                   | Descrição                                      |
+| ------------------------ | ---------------------------------------------- |
+| `gotoList()`             | Navega para a listagem da collection.          |
+| `gotoCreate()`           | Navega para a página de criação.               |
+| `save()`                 | Salva e aguarda toast de sucesso.              |
+| `delete()`               | Executa fluxo completo de exclusão.            |
+| `verifyInList(title)`    | Verifica se o texto está visível na listagem.  |
+| `verifyNotInList(title)` | Verifica se o texto NÃO está na listagem.      |
+| `switchTab(tabName, exact?)` | Alterna para uma aba (ex.: "SEO", "Conteúdo"). `exact` (padrão `true`) controla correspondência exata do nome. |
 
 ### `createAuthFixture(configPromise, options?)`
 
-| Parâmetro          | Tipo                       | Obrigatório | Descrição                                    |
-|--------------------|----------------------------|-------------|----------------------------------------------|
-| `configPromise`    | `any`                      | sim         | `configPromise` do Payload (`@payload-config`). |
-| `options.userData` | `Record<string, unknown>`  | não         | Dados extras para mergear na criação do usuário. |
+| Parâmetro          | Tipo                      | Obrigatório | Descrição                                        |
+| ------------------ | ------------------------- | ----------- | ------------------------------------------------ |
+| `configPromise`    | `any`                     | sim         | `configPromise` do Payload (`@payload-config`).  |
+| `options.userData` | `Record<string, unknown>` | não         | Dados extras para mergear na criação do usuário. |
 
-| Fixture            | Escopo   | Descrição                                  |
-|--------------------|----------|--------------------------------------------|
-| `payload`          | worker   | Instância da API Local do Payload.         |
-| `authenticatedPage`| test     | Página Playwright já autenticada.          |
-
-## Estrutura do Projeto
-
-```
-src/
-├── index.ts                        # Entrypoint
-├── pages/
-│   └── BaseCollectionPage.ts       # Classe base abstrata
-└── fixtures/
-    └── createAuthFixture.ts        # Factory de fixtures
-```
+| Fixture             | Escopo | Descrição                          |
+| ------------------- | ------ | ---------------------------------- |
+| `payload`           | worker | Instância da API Local do Payload. |
+| `authenticatedPage` | test   | Página Playwright já autenticada.  |

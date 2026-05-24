@@ -99,12 +99,14 @@ export abstract class BaseCollectionPage {
 
   /**
    * Navega para a página de criação de um novo registro na collection
-   * e aguarda até que a URL corresponda ao padrão `/admin/collections/:slug/create`.
+   * e aguarda até que a URL corresponda a `/admin/collections/:slug/create`
+   * ou ao redirecionamento para `/admin/collections/:slug/:id` (comum quando
+   * a collection possui "versions" habilitado no Payload).
    */
   async gotoCreate(): Promise<void> {
     await this.page.goto(`/admin/collections/${this.collectionSlug}/create`);
     await this.page.waitForURL(
-      new RegExp(`/admin/collections/${this.collectionSlug}/create`),
+      new RegExp(`/admin/collections/${this.collectionSlug}/(create|[a-zA-Z0-9_-]+$)`),
     );
   }
 
@@ -168,11 +170,14 @@ export abstract class BaseCollectionPage {
   /**
    * Alterna para uma aba específica da collection (ex.: "SEO", "Conteúdo").
    *
-   * @param tabName  Nome visível da aba (case‑sensitive).
+   * @param tabName Nome visível da aba (case‑sensitive).
+   * @param exact   Se `true` (padrão), usa correspondência exata do nome.
+   *                Passe `false` para correspondência parcial (ex.: "Conteúdo"
+   *                casa com "Conteúdo Principal").
    */
-  async switchTab(tabName: string): Promise<void> {
+  async switchTab(tabName: string, exact = true): Promise<void> {
     await this.page
-      .getByRole("button", { name: tabName })
+      .getByRole("button", { name: tabName, exact })
       .filter({ visible: true })
       .click();
   }

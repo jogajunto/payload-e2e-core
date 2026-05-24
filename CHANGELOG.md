@@ -5,6 +5,16 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] - 2026-05-24
+
+### Added
+
+- **`BaseCollectionPage.switchTab`**: novo parâmetro `exact` (padrão `true`) para controlar correspondência exata ou parcial do nome da aba.
+
+### Fixed
+
+- **`BaseCollectionPage.gotoCreate`**: corrige timeout em collections com "versions" habilitado. Agora o `waitForURL` aceita tanto a URL `/create` quanto o redirecionamento para `/:id`.
+
 ## [0.1.1] - 2026-05-24
 
 ### Fixed
