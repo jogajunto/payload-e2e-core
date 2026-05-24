@@ -104,7 +104,7 @@ export function createAuthFixture(
      */
     payload: [
       async (
-        _workerContext: Record<string, never>,
+        {},
         use: (payload: BasePayload) => Promise<void>,
       ): Promise<void> => {
         if (!process.env.PAYLOAD_SECRET) {
