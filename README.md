@@ -1,4 +1,4 @@
-# @jogajunto/payload-e2e-core
+# @agenciajogajunto/payload-e2e-core
 
 Abstrações reutilizáveis de teste E2E (Playwright) para o **Payload CMS**.
 
@@ -13,7 +13,7 @@ e **Fixtures injetáveis**.
 ## Instalação
 
 ```bash
-npm install --save-dev @jogajunto/payload-e2e-core
+npm install --save-dev @agenciajogajunto/payload-e2e-core
 ```
 
 Certifique-se de que as peer dependencies estão instaladas no projeto:
@@ -33,7 +33,7 @@ o pacote funcione em qualquer projeto.
 ```ts
 // tests/e2e/fixtures.ts
 import configPromise from "@payload-config";
-import { createAuthFixture } from "@jogajunto/payload-e2e-core";
+import { createAuthFixture } from "@agenciajogajunto/payload-e2e-core";
 
 // Caso a collection `users` do projeto não tenha campos obrigatórios extras
 export const test = createAuthFixture(configPromise);
@@ -46,7 +46,7 @@ adicionais (ex.: `name`, `role`), passe-os no segundo parâmetro:
 ```ts
 // tests/e2e/fixtures.ts
 import configPromise from "@payload-config";
-import { createAuthFixture } from "@jogajunto/payload-e2e-core";
+import { createAuthFixture } from "@agenciajogajunto/payload-e2e-core";
 
 export const test = createAuthFixture(configPromise, {
   userData: { name: "Test User", role: "editor" },
@@ -61,7 +61,7 @@ collection.
 
 ```ts
 // tests/e2e/pages/PratosPage.ts
-import { BaseCollectionPage } from "@jogajunto/payload-e2e-core";
+import { BaseCollectionPage } from "@agenciajogajunto/payload-e2e-core";
 import type { Page } from "@playwright/test";
 
 export class PratosPage extends BaseCollectionPage {

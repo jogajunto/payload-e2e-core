@@ -69,7 +69,7 @@ export type AuthFixtures = {
  * ```ts
  * // tests/e2e/fixtures.ts
  * import configPromise from "@payload-config";
- * import { createAuthFixture } from "@jogajunto/payload-e2e-core";
+ * import { createAuthFixture } from "@agenciajogajunto/payload-e2e-core";
  *
  * // Sem campos extras
  * export const test = createAuthFixture(configPromise);
@@ -79,7 +79,7 @@ export type AuthFixtures = {
  * ```ts
  * // Com campos obrigatórios adicionais na collection users
  * import configPromise from "@payload-config";
- * import { createAuthFixture } from "@jogajunto/payload-e2e-core";
+ * import { createAuthFixture } from "@agenciajogajunto/payload-e2e-core";
  *
  * export const test = createAuthFixture(configPromise, {
  *   userData: { name: "Test User", role: "editor" },

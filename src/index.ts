@@ -1,5 +1,5 @@
 /**
- * @jogajunto/payload-e2e-core
+ * @agenciajogajunto/payload-e2e-core
  *
  * Entrypoint do pacote. Exporta as abstrações principais para testes
  * E2E com Playwright + Payload CMS.
